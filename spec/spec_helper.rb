@@ -11,6 +11,7 @@ require 'rspec/core/formatters/progress_formatter'
 require 'capybara/rspec'
 require 'faker'
 require 'database_cleaner'
+require 'application_controller'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

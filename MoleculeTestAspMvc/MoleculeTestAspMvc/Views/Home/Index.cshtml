@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Trade Information";
+}    
+
+<h2>Trade Attributes</h2><br/>
+<table style="border:1px solid black">
+    @{
+        var cnt = 1;
+        foreach( var trade in ViewBag.Trades )
+        {
+            if( cnt == 1 )
+            {
+                <tr>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getIDColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getCounterPartyColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getTraderColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getMTMCurveColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getBuySellColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getPriceColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getVolumeColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getTenorStartColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getTenorEndColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getDeliveryLocationColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getInstrumentColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getBrokerageColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getTagsColumn)</th>
+                    <th>@(((molecule_test.Models.TradeInfo)trade).getNotesColumn)</th>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getIDColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getCounterPartyColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getTraderColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getMTMCurveColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getBuySellColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getPriceColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getVolumeColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getTenorStartColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getTenorEndColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getDeliveryLocationColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getInstrumentColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getBrokerageColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getTagsColumn)</td>
+                    <td>@(((molecule_test.Models.TradeInfo)trade).getNotesColumn)</td>
+                </tr>
+            }
+            cnt += 1;
+        }
+    }
+</table>
+
+<div align="right">
+    <p>Portfolio Sum = @ViewBag.PortfolioSum</p>
+</div>
+
+<div>
+<h3>MTM Values</h3>
+
+<ul>
+    @foreach( var mtmValue in ViewBag.MtmValues)
+    {
+        <li>@mtmValue.ToString()</li>
+    }
+</ul>
+</div>
